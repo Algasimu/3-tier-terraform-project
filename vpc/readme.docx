@@ -1,0 +1,16 @@
+This module is to create a Vritual Private Network VPC.
+commands to run terraform:  
+    1. terraform init
+    2. terraform validate
+    3. terraform plan
+    4. terraform apply
+    5. terraform destroy
+    6.terraform fmt
+------------------------------------------------------
+    ssh -i private-server-keys ec2-user @10.0.3.18
+
+sudo dnf update -y
+sudo dnf install -y https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm
+sudo dnf install -y mysql-community-client --nogpgcheck
+
+mysql -h <rds-endpoint> -P 3306 -u <master-username> -p
