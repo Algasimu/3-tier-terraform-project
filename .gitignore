@@ -1,7 +1,12 @@
+.terraform.lock.hcl
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+LinkedIn Playbook.docx
+myKey.pem
 # Terraform generated directories
 .terraform/
-.terraform.lock.hcl 
-# Consider committing this if working in a team for consistent provider versions
+.terraform.lock.hcl # Consider committing this if working in a team for consistent provider versions
 
 # Terraform state files
 *.tfstate
