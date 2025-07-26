@@ -35,6 +35,7 @@ resource "aws_vpc_security_group_egress_rule" "alb_egress_rule" {
   cidr_ipv4         = "0.0.0.0/0"
   ip_protocol       = "-1" # semantically equivalent to all ports
 }
+#### Target group
 
 resource "aws_lb_target_group" "apci_jupiter_target_group" {
   name        = "apci-tg"

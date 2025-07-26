@@ -1,5 +1,25 @@
-.terraform.lock.hcl
+# Terraform generated directories
 .terraform/
-terraform.tfstate
-terraform.tfstate.backup
-LinkedIn Playbook.docx
+.terraform.lock.hcl 
+# Consider committing this if working in a team for consistent provider versions
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Terraform sensitive variable files
+*.tfvars
+*.tfvars.json
+
+# Local override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Providers and modules downloaded by Terraform
+.terraform/
