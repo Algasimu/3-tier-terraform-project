@@ -14,3 +14,5 @@ sudo dnf install -y https://dev.mysql.com/get/mysql80-community-release-el9-1.no
 sudo dnf install -y mysql-community-client --nogpgcheck
 
 mysql -h <rds-endpoint> -P 3306 -u <master-username> -p
+
+# Terraform init -migrate-state 

@@ -4,6 +4,7 @@ terraform.tfstate
 terraform.tfstate.backup
 LinkedIn Playbook.docx
 myKey.pem
+scripts
 # Terraform generated directories
 .terraform/
 .terraform.lock.hcl # Consider committing this if working in a team for consistent provider versions
