@@ -15,3 +15,4 @@ engine_version            = "8.0"
 instance_class            = "db.t3.micro"
 db_username               = "admin"
 parameter_group_name      = "default.mysql8.0"
+

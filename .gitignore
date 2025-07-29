@@ -1,5 +1,60 @@
-.terraform.lock.hcl
+# Local .terraform dir
 .terraform/
+
+# Terraform lock file (optional: include this if working alone)
+.terraform.lock.hcl
+
+# State files
 terraform.tfstate
-terraform.tfstate.backup
+terraform.tfstate.*
+*.tfstate
+*.tfstate.*
+
+# Sensitive variable files
+*.tfvars
+*.tfvars.json
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# SSH keys or secrets
+*.pem
+
+# Personal files
 LinkedIn Playbook.docx
+scripts/
+
+
+# State files
+terraform.tfstate
+terraform.tfstate.*
+*.tfstate
+*.tfstate.*
+
+# Sensitive variable files
+*.tfvars
+*.tfvars.json
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# SSH keys or secrets
+*.pem
+
+# Personal files
+LinkedIn Playbook.docx
+scripts/

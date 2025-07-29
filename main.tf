@@ -84,7 +84,3 @@ module "s3bucket" {
   source = "./s3-bucket"
   vpc_id = module.vpc.vpc_id
 }
-# module "dynamodb" {
-#   source = "./dynamodb"
-
-# }

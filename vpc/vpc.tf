@@ -62,7 +62,7 @@ resource "aws_subnet" "apci_jupiter_private_subnet_az_2b" {
   })
 }
 
-## Private subnet on Availability zone-2a
+## DB Private subnet on Availability zone-2a
 resource "aws_subnet" "apci_jupiter_db_subnet_az_2a" {
   vpc_id     = aws_vpc.apci_jupiter_main_vpc.id
   cidr_block = var.private_subnet_cidr_block[2]
@@ -73,7 +73,7 @@ resource "aws_subnet" "apci_jupiter_db_subnet_az_2a" {
   })
 }
 
-## Private subnet on Availability zone-2b
+## DB Private subnet on Availability zone-2b
 resource "aws_subnet" "apci_jupiter_db_subnet_az_2b" {
   vpc_id     = aws_vpc.apci_jupiter_main_vpc.id
   cidr_block = var.private_subnet_cidr_block[3]
@@ -108,6 +108,11 @@ resource "aws_route_table_association" "apci_jupiter_public_route_association_az
   subnet_id      = aws_subnet.apci_jupiter_public_subnet_az_2b.id
   route_table_id = aws_route_table.apci_jupiter_public_route.id
 }
+
+#------------------------------------------------------------------------------------------------------------
+# In this section, we build the Elastic IP, the NAT gateway, the private route, and associate this private route with  
+# both the private subnet and the db_subnet in availability zone 2A.
+
 
 ## Elastic IP in availabily zone 2A
 resource "aws_eip" "apci_jupiter_eip_az_2a" {
@@ -152,12 +157,14 @@ resource "aws_route_table_association" "apci_jupiter_private_route_association_a
   route_table_id = aws_route_table.apci_jupiter_private_route.id
 }
 
-#### Private route table association in availabily zone 2A
+#### Private route table association for db_subnet in availabily zone 2A
 resource "aws_route_table_association" "apci_jupiter_private_db_route_association_az_2a" {
   subnet_id      = aws_subnet.apci_jupiter_db_subnet_az_2a.id
   route_table_id = aws_route_table.apci_jupiter_private_route.id
 }
-
+#------------------------------------------------------------------------------------------------------------
+# In this section, we build the Elastic IP, the NAT gateway, the private route, and associate this private route with  
+# both the private subnet and the db_subnet in availability zone 2B.
 
 ## Elastic IP  availability zone 2B
 resource "aws_eip" "apci_jupiter_eip_az_2b" {
@@ -210,20 +217,9 @@ resource "aws_route_table_association" "apci_jupiter_private_db_route_associatio
 
 ############## Create the S3 Bucket #######################
 
-resource "aws_s3_bucket" "apci_jupiter_vpc_bucket" {
+/*resource "aws_s3_bucket" "apci_jupiter_vpc_bucket" {
   bucket = "apci-jupiter-vpc-flow-log-v5"
 }
-
-# resource "aws_s3_bucket" "flow_logs_bucket" {
-#   bucket = "${var.tags["project"]}-flow-logs-${var.tags["environment"]}-${random_string.suffix.result}"
-#   acl    = "private"
-# }
-
-# resource "random_string" "suffix" {
-#   length  = 5
-#   special = false
-#   upper   = true
-# }
 
 ############## Create a VPC flow log bucket #######################
 resource "aws_flow_log" "apci_jupiter_vpc_flow_log" {
@@ -232,6 +228,8 @@ resource "aws_flow_log" "apci_jupiter_vpc_flow_log" {
   traffic_type         = "ALL"
   vpc_id               = aws_vpc.apci_jupiter_main_vpc.id
 }
+*/
+
 
 
 

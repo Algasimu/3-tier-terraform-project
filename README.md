@@ -1,3 +1,5 @@
+
+
 =============== Git Command =====================
 Commands			        Description
 git init			        Initializes a new Git repository in your current directory.
@@ -26,3 +28,11 @@ git stash			        Temporarily saves uncommitted changes.
 git stash pop			    Restores the last stashed changes.
 git remote -v			    Shows remote connections associated with the repository.
 git tag <tag-name>		    Creates a tag for marking a point in history (like a release).
+
+#### Terraform commands
+terraform plan -out="build.tfplan"
+terraform show 
+terraform state list
+terraform state show -state="terraform.tfstate" aws_instance.web_server
+terraform state mv -state="terraform.tfstate" aws_instance.web_server aws_instance.web_application_server #rename the resource from statefile
+terraform state rm -state="terraform.tfstate" aws_instance.web_application_server  #remove resource from statefile
